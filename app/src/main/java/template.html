@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --section-bg-color: #fff;
+        }
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: var(--section-bg-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        .name-title {
+            flex: 2;
+        }
+        .contact-info {
+            flex: 1;
+            text-align: right;
+            font-size: 0.9em;
+        }
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.2em;
+        }
+        h2 {
+            color: var(--secondary-color);
+            margin: 15px 0 10px;
+            font-size: 1.3em;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .job, .education-entry {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+        }
+        .job::before, .education-entry::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: -11px;
+            width: 1px;
+            background-color: var(--secondary-color);
+        }
+        .job:last-child::before, .education-entry:last-child::before {
+            bottom: 4px;
+        }
+        .job-title, .degree-name {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+        .job-company, .institution-name {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+        .job-date, .education-date {
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            margin-top: 5px;
+        }
+        .skill-item {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        .contact-item {
+            margin-bottom: 3px;
+        }
+        .contact-icon {
+            margin-right: 5px;
+            color: var(--secondary-color);
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="name-title">
+                <h1>{{Name}}</h1>
+                <p>{{JobTitle}}</p>
+            </div>
+            <div class="contact-info">
+                <p class="contact-item"><span class="contact-icon">📧</span>{{Email}}</p>
+                <p class="contact-item"><span class="contact-icon">📱</span>{{Phone}}</p>
+                <p class="contact-item"><span class="contact-icon">📍</span>{{Address}}</p>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>{{Summary}}</p>
+        </section>
+
+        <section class="section">
+            <h2>Work Experiences</h2>
+            {{WorkExperiences}}
+            <!-- <div class="job">
+                <p class="job-title">Senior Job Title</p>
+                <p class="job-company">Company Name</p>
+                <p class="job-date">January 2020 - Present</p>
+                <ul>
+                    <li>Key achievement or responsibility that showcases your skills</li>
+                    <li>Another significant accomplishment or duty</li>
+                    <li>A third noteworthy contribution to the role or company</li>
+                </ul>
+            </div>
+            <div class="job">
+                <p class="job-title">Previous Job Title</p>
+                <p class="job-company">Previous Company Name</p>
+                <p class="job-date">June 2017 - December 2019</p>
+                <ul>
+                    <li>Relevant achievement or responsibility from this role</li>
+                    <li>Another important accomplishment or task</li>
+                </ul>
+            </div> -->
+        </section>
+
+        <section class="section">
+            <h2>Educations</h2>
+            {{Educations}}
+            <!-- <div class="education-entry">
+                <p class="degree-name">Master of Science in Computer Science</p>
+                <p class="institution-name">University of Technology</p>
+                <p class="education-date">September 2018 - June 2020</p>
+                <p>Thesis: "Advanced Machine Learning Algorithms for Natural Language Processing"</p>
+            </div>
+            <div class="education-entry">
+                <p class="degree-name">Bachelor of Science in Software Engineering</p>
+                <p class="institution-name">State University</p>
+                <p class="education-date">September 2014 - June 2018</p>
+                <p>Minor in Data Science, Graduated with Honors</p>
+            </div> -->
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                {{Skills}}
+                <!-- <li class="skill-item">Python</li>
+                <li class="skill-item">Java</li>
+                <li class="skill-item">Machine Learning</li>
+                <li class="skill-item">Data Analysis</li>
+                <li class="skill-item">Project Management</li> -->
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            {{Certifications}}
+            <ul>
+                <!-- <li><strong>AWS Certified Solutions Architect</strong>, Amazon Web Services, 2022</li>
+                <li><strong>Certified Scrum Master (CSM)</strong>, Scrum Alliance, 2021</li> -->
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
