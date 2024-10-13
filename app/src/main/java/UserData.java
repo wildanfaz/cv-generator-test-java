@@ -96,13 +96,15 @@ public class UserData {
 
             content = content.replace("{{Certifications}}", certificationsHtml);
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./" + "CV_" + name + ".html"));
+            String fileName = "CV_" + name.replaceAll(" ", "_");
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("./" + fileName + ".html"));
             writer.write(content);
             writer.close();
 
             // Define the input HTML file and output PDF file
-            String htmlFile = "CV_" + name + ".html";
-            String pdfFile = "CV_" + name + ".pdf";
+            String htmlFile = fileName + ".html";
+            String pdfFile = fileName + ".pdf";
 
             // Command to execute
             String command = "";
